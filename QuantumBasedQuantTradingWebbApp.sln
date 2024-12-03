@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedData", "SharedData", "{9E73902B-E75D-4E90-8DC4-5066BB7B0B48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumBasedQuantTrading.Models", "QuantumBasedQuantTrading.Models\QuantumBasedQuantTrading.Models.csproj", "{36CF7026-0B3D-4E84-8F37-E622C15B5F54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{E9C44203-8448-4675-9C01-90A4ABDDB790}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEnd", "BackEnd", "{7A0A759C-92B7-4B8E-B7E9-06468E937AA0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumBasedQuantTrading.Repository", "QuantumBasedQuantTrading.Repository\QuantumBasedQuantTrading.Repository.csproj", "{AAAE0FAC-344E-4360-8E7B-2AB070F62406}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36CF7026-0B3D-4E84-8F37-E622C15B5F54} = {36CF7026-0B3D-4E84-8F37-E622C15B5F54}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumBasedQuantTrading.Logic", "QuantumBasedQuantTrading.Logic\QuantumBasedQuantTrading.Logic.csproj", "{871E9CE9-0417-4793-A939-41A283E0E231}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumBasedQuantTrading.Web", "QuantumBasedQuantTrading.Web\QuantumBasedQuantTrading.Web.csproj", "{8DBA417F-3D2C-430B-8DE3-FA92FB8B9592}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantumBasedQuantTrading.APIEndpoint", "QuantumBasedQuantTrading.APIEndpoint\QuantumBasedQuantTrading.APIEndpoint.csproj", "{669F0D32-6455-4167-8C90-DBD815D1BC6E}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "QuantumBasedQuantTrading.AvgSent", "QuantumBasedQuantTrading.AvgSent\QuantumBasedQuantTrading.AvgSent.pyproj", "{6B7F8775-1B7A-4073-87F3-8B48947F8141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantumBasedQuantTrading.Test", "QuantumBasedQuantTrading.Test\QuantumBasedQuantTrading.Test.csproj", "{9AEB825B-CC34-43B3-99FA-445BC8F4061C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36CF7026-0B3D-4E84-8F37-E622C15B5F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CF7026-0B3D-4E84-8F37-E622C15B5F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CF7026-0B3D-4E84-8F37-E622C15B5F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CF7026-0B3D-4E84-8F37-E622C15B5F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAE0FAC-344E-4360-8E7B-2AB070F62406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAE0FAC-344E-4360-8E7B-2AB070F62406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAE0FAC-344E-4360-8E7B-2AB070F62406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAE0FAC-344E-4360-8E7B-2AB070F62406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{871E9CE9-0417-4793-A939-41A283E0E231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871E9CE9-0417-4793-A939-41A283E0E231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871E9CE9-0417-4793-A939-41A283E0E231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871E9CE9-0417-4793-A939-41A283E0E231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DBA417F-3D2C-430B-8DE3-FA92FB8B9592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBA417F-3D2C-430B-8DE3-FA92FB8B9592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DBA417F-3D2C-430B-8DE3-FA92FB8B9592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DBA417F-3D2C-430B-8DE3-FA92FB8B9592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{669F0D32-6455-4167-8C90-DBD815D1BC6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{669F0D32-6455-4167-8C90-DBD815D1BC6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{669F0D32-6455-4167-8C90-DBD815D1BC6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{669F0D32-6455-4167-8C90-DBD815D1BC6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B7F8775-1B7A-4073-87F3-8B48947F8141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B7F8775-1B7A-4073-87F3-8B48947F8141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEB825B-CC34-43B3-99FA-445BC8F4061C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEB825B-CC34-43B3-99FA-445BC8F4061C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEB825B-CC34-43B3-99FA-445BC8F4061C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEB825B-CC34-43B3-99FA-445BC8F4061C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36CF7026-0B3D-4E84-8F37-E622C15B5F54} = {9E73902B-E75D-4E90-8DC4-5066BB7B0B48}
+		{AAAE0FAC-344E-4360-8E7B-2AB070F62406} = {7A0A759C-92B7-4B8E-B7E9-06468E937AA0}
+		{871E9CE9-0417-4793-A939-41A283E0E231} = {7A0A759C-92B7-4B8E-B7E9-06468E937AA0}
+		{8DBA417F-3D2C-430B-8DE3-FA92FB8B9592} = {E9C44203-8448-4675-9C01-90A4ABDDB790}
+		{669F0D32-6455-4167-8C90-DBD815D1BC6E} = {7A0A759C-92B7-4B8E-B7E9-06468E937AA0}
+		{6B7F8775-1B7A-4073-87F3-8B48947F8141} = {7A0A759C-92B7-4B8E-B7E9-06468E937AA0}
+		{9AEB825B-CC34-43B3-99FA-445BC8F4061C} = {7A0A759C-92B7-4B8E-B7E9-06468E937AA0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34ACCED2-C8E7-4941-98B0-B7AB6D87C6DB}
+	EndGlobalSection
+EndGlobal
