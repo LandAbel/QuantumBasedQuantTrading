@@ -1,0 +1,67 @@
+﻿@model QuantumBasedQuantTrading.Web.Models.MachineLearningInputModel
+
+<link rel="stylesheet" type="text/css" href="~/css/AddStyle.css">
+<div class="container mt-5">
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3>Machine Learning Input</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="MachineLearning" method="post">
+                <div class="form-group mb-3">
+                    <label for="Symbol" class="form-label">Symbol:</label>
+                    <input type="text" class="form-control" asp-for="Symbol" id="Symbol" placeholder="Enter symbol" required />
+                    <span asp-validation-for="Symbol" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="TitleSentiment" class="form-label">Title Sentiment:</label>
+                    <input type="number" class="form-control" asp-for="TitleSentiment" id="TitleSentiment" step="0.00000001" placeholder="Enter title sentiment" required />
+                    <span asp-validation-for="TitleSentiment" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="ContSentiment" class="form-label">Content Sentiment:</label>
+                    <input type="number" class="form-control" asp-for="ContSentiment" id="ContSentiment" step="0.00000001" placeholder="Enter content sentiment" required />
+                    <span asp-validation-for="ContSentiment" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="DescSentiment" class="form-label">Description Sentiment:</label>
+                    <input type="number" class="form-control" asp-for="DescSentiment" id="DescSentiment" step="0.00000001" placeholder="Enter description sentiment" required />
+                    <span asp-validation-for="DescSentiment" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="OpenPrice" class="form-label">Open Price:</label>
+                    <input type="number" class="form-control" asp-for="OpenPrice" id="OpenPrice" step="0.00000001" placeholder="Enter open price" required />
+                    <span asp-validation-for="OpenPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="CurrentLowPrice" class="form-label">Current Low Price:</label>
+                    <input type="number" class="form-control" asp-for="CurrentLowPrice" id="CurrentLowPrice" step="0.00000001" placeholder="Enter current low price" required />
+                    <span asp-validation-for="CurrentLowPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="CurrentHighPrice" class="form-label">Current High Price:</label>
+                    <input type="number" class="form-control" asp-for="CurrentHighPrice" id="CurrentHighPrice" step="0.00000001" placeholder="Enter current high price" required />
+                    <span asp-validation-for="CurrentHighPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="CurrentVolume" class="form-label">Current Volume:</label>
+                    <input type="number" class="form-control" asp-for="CurrentVolume" id="CurrentVolume" step="0.00000001" placeholder="Enter current volume" required />
+                    <span asp-validation-for="CurrentVolume" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

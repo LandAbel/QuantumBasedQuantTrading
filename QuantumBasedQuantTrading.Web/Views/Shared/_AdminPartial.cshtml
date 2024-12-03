@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using QuantumBasedQuantTrading.Models;
+@inject SignInManager<Users> SignInManager
+@inject UserManager<Users> UserManager
+
+
+@if (SignInManager.IsSignedIn(User) && await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin"))
+{
+<li class="nav-item">
+    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AddAllNews">Add News</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AddFullNews">Add Full News</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AddOutputSent">Add Output Sentimental</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AddAverageSent">Add Average Sentimental</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AutoCollectNews">Auto Collect News</a>
+</li>
+<li class="nav-item">
+    <a style="color:red" class="nav-link" asp-area="" asp-controller="Home" asp-action="Users">Edit Users</a>
+</li>
+}

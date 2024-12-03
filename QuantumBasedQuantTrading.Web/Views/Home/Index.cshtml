@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Styles -->
+<style>
+    /* General styling */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9f9fb;
+        color: #212529;
+    }
+
+    h1, h3 {
+        text-transform: capitalize;
+    }
+
+    .container {
+        max-width: 1100px;
+    }
+
+    .card {
+        border: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+    .list-group-item {
+        background-color: #ffffff;
+        border: none;
+        padding: 1rem 1.5rem;
+    }
+
+        .list-group-item i {
+            font-size: 1.5rem;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Header styling */
+    .header-section {
+        background: linear-gradient(45deg, #1e88e5, #00acc1);
+        color: white;
+        border-radius: 15px;
+        padding: 50px 20px;
+        margin-bottom: 40px;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+        .header-section h1 {
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+    /* Footer link section */
+    .learn-more {
+        background-color: #e3f2fd;
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .list-group-item {
+        border: none;
+        padding: 1.2rem;
+        transition: background-color 0.2s ease;
+    }
+
+        .list-group-item:hover {
+            background-color: #f7f9fc;
+            cursor: pointer;
+        }
+
+        .list-group-item i {
+            transition: transform 0.2s ease;
+        }
+
+        .list-group-item:hover i {
+            transform: scale(1.2);
+        }
+
+</style>
+
+<div class="container py-5">
+    <div class="header-section text-center mb-5">
+        <h1 class="display-3 fw-bold">Welcome to QuantumStockPredictor</h1>
+        <p class="lead">
+            Your gateway to the future of stock market prediction, powered by quantum computing.
+        </p>
+    </div>
+
+    <div class="row text-center mb-5">
+        <div class="col-md-6 offset-md-3">
+            <h3 class="fw-bold text-info mb-4">About the Application</h3>
+            <p>
+                Quantum based stock predictor uses cutting-edge quantum computing algorithms to analyze complex datasets
+                and provide highly accurate stock market predictions. Designed for investors and analysts, my platform
+                delivers insights that go beyond traditional methods.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-10 offset-md-1">
+            <h3 class="fw-bold text-info text-center mb-4">Getting Started</h3>
+            <ul class="list-group shadow-sm">
+                <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-person-circle text-primary me-3" style="font-size: 1.5rem;"></i>
+                    <strong>Create an account or log in to access personalized predictions.</strong>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-upload text-success me-3" style="font-size: 1.5rem;"></i>
+                    Upload historical stock data or automatically import datasets.
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-gear text-warning me-3" style="font-size: 1.5rem;"></i>
+                    Customize your prediction parameters and let our quantum engine work its magic.
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-bar-chart-line text-danger me-3" style="font-size: 1.5rem;"></i>
+                    View and analyze prediction results with intuitive visualization tools.
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                    <i class="bi bi-lightbulb text-info me-3" style="font-size: 1.5rem;"></i>
+                    <a asp-action="MachineLearningView" class="text-primary">Then just enjoy</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="learn-more text-center mb-5">
+        <h3 class="fw-bold">Learn More</h3>
+        <p>
+            Explore our <a href="https://docs.microsoft.com/aspnet/core" class="text-primary">documentation</a>
+            page to learn how quantum computing
+            is transforming financial forecasting.
+        </p>
+    </div>
+</div>

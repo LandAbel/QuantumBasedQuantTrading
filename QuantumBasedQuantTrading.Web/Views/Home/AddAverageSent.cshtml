@@ -1,0 +1,43 @@
+﻿@using QuantumBasedQuantTrading.Models;
+
+<link rel="stylesheet" type="text/css" href="~/css/AddStyle.css">
+<div class="form-container">
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    <h4>Upload CSV File</h4>
+    <form method="post" enctype="multipart/form-data" asp-action="AddAverageSentFromFile">
+        <label>Upload CSV File:</label>
+        <input type="file" name="csvFile" accept=".csv" required />
+        <input type="submit" value="Upload CSV" />
+    </form>
+
+    <h4>Manual Entry</h4>
+    <form method="post" asp-action="AddAverageSent">
+        <label>Date Published:</label>
+        <input type="date" name="Published_at" required />
+
+        <label>Average Title Sentiment:</label>
+        <input type="number" step="0.01" name="AvgTitleSentiment" required />
+
+        <label>Average Content Sentiment:</label>
+        <input type="number" step="0.01" name="AvgContentSentiment" required />
+
+        <label>Average Description Sentiment:</label>
+        <input type="number" step="0.01" name="AvgDescriptionSentiment" required />
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+

@@ -1,0 +1,108 @@
+﻿@using QuantumBasedQuantTrading.Models;
+@using Microsoft.AspNetCore.Identity;
+
+<link rel="stylesheet" type="text/css" href="~/css/AddStyle.css">
+
+<style>
+    .text-button {
+        background: none;
+        border: none;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+        padding: 0;
+        text-decoration: underline;
+    }
+
+        .text-button:hover {
+            text-decoration: none;
+        }
+
+    .tooltip-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+        z-index: 1000;
+    }
+
+    .tooltip-container:hover .tooltip-content {
+        display: block;
+    }
+
+    .tooltip-content pre {
+        margin: 0;
+        font-size: 0.9rem;
+        background-color: #f8f9fa;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="form-container">
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    <h4>News Article</h4>
+    <hr />
+
+    <form method="post" enctype="multipart/form-data" class="photoForm" asp-action="AddAllNewsFromFile">
+    <label>
+        <div class="tooltip-container">
+            <button type="button" class="text-button" >Upload JSON File:</button>
+            <div class="tooltip-content">
+                <strong>JSON Template:</strong>
+                <pre>
+                {
+                    "Title": "Sample News Title",
+                    "Description": "This is a sample description for a news article.",
+                    "URL": "https://example.com/news-article",
+                    "Published_at": "2024-04-06T13:24:00Z"
+                }
+                </pre>
+            </div>
+        </div>
+    </label>
+        <input type="file" name="jsonFile" accept=".json" required />
+        <input type="submit" value="Upload JSON File" />
+    </form>
+
+    <h4>Manual Entry</h4>
+    <form method="post" enctype="multipart/form-data" asp-action="AddAllNews">
+        <label>Title</label>
+        <input type="text" name="Title" required />
+
+        <label>Description</label>
+        <input type="text" name="Description" required />
+
+        <label>URL</label>
+        <input type="text" name="URL" required />
+
+        <label for="publishedAt">Published At:</label>
+        <input type="datetime-local" name="Published_at" value="2024-04-06T13:24:00Z" required />
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Users>
+@using Microsoft.AspNetCore.Identity
+@using QuantumBasedQuantTrading.Models;
+@inject SignInManager<Users> SignInManager
+@inject UserManager<Users> UserManager
+
+<h2>Users</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+@{
+        foreach(var user in Model)
+        {
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>@user.FirstName @user.LastName</h4>
+                        <h5>@user.Email</h5>
+                        @if (await UserManager.IsInRoleAsync(user, "Admin"))
+                        {
+                                <a class="btn btn-danger" href="/Home/RemoveAdmin?uid=@user.Id">Remove Admin Rights</a>
+                        }
+                        else
+                        {
+                                <a class="btn btn-success" href="/Home/GrantAdmin?uid=@user.Id">Grant Admin Rights</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>

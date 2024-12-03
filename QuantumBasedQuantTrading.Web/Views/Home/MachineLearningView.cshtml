@@ -1,0 +1,111 @@
+﻿@model QuantumBasedQuantTrading.Models.MachineLearningModelData
+
+@{
+    ViewData["Title"] = "Machine Learning Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var stockSymbol = "BRK-B";
+    var stockSymbol = Model?.Symbol ?? "BRK-B";
+}
+<style>
+    .table {
+        border-collapse: separate;
+        border-spacing: 0 10px; 
+        background-color: #ffffff; 
+    }
+
+        .table thead th {
+            border: none;
+            font-weight: 600;
+            color: #495057;
+            background-color: #f8f9fa;
+        }
+
+        .table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+            .table tbody tr:hover {
+                background-color: #f1f3f6;
+            }
+
+    .card {
+        border: 1px solid #e3e6f0;
+        border-radius: 15px;
+        background-color: #ffffff;
+    }
+</style>
+
+@if (Model != null)
+{
+    <br>
+    <div class="card shadow-sm p-4 mb-4">
+        <h4 class="fw-bold text-info mb-3">Latest Machine Learning Results</h4>
+        <table class="table table-hover align-middle text-center">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Predicted for</th>
+                    <td>@Model.Symbol</td>
+                </tr>
+                <tr>
+                    <th scope="row">Train MAE</th>
+                    <td>@Model.trainMAE</td>
+                </tr>
+                <tr>
+                    <th scope="row">Validation MAE</th>
+                    <td>@Model.valMAE</td>
+                </tr>
+                <tr>
+                    <th scope="row">Test MAE</th>
+                    <td>@Model.testMAE</td>
+                </tr>
+                <tr>
+                    <th scope="row">Predicted Value</th>
+                    <td>@Model.predictedValue</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning text-center">
+        <strong>No results available.</strong> Please ensure the model has been trained.
+    </div>
+}
+
+<hr />
+
+<h2>Stock Chart</h2>
+
+@{
+    var widgetHtml = $@"
+    <div class='tradingview-widget-container'>
+      <div id='tradingview_{stockSymbol}'></div>
+      <script type='text/javascript' src='https://s3.tradingview.com/tv.js'></script>
+      <script type='text/javascript'>
+      new TradingView.widget(
+      {{
+        'width': 980,
+        'height': 610,
+        'symbol': '{stockSymbol}',
+        'interval': 'D',
+        'timezone': 'Etc/UTC',
+        'theme': 'light',
+        'style': '1',
+        'locale': 'en',
+        'toolbar_bg': '#f1f3f6',
+        'enable_publishing': false,
+        'allow_symbol_change': true,
+        'container_id': 'tradingview_{stockSymbol}'
+      }});
+      </script>
+    </div>";
+}
+
+@Html.Raw(widgetHtml)
