@@ -367,3 +367,7 @@ QuantumBasedQuantTradingWebbApp/QuantumBasedQuantTrading.Web/appsettings.json
 
 # Ignore appsettings.json for QuantumBasedQuantTrading.APIEndpoint
 QuantumBasedQuantTradingWebbApp/QuantumBasedQuantTrading.APIEndpoint/appsettings.json
+/QuantumBasedQuantTrading.APIEndpoint/appsettings.json
+/QuantumBasedQuantTrading.APIEndpoint/appsettings.Development.json
+/QuantumBasedQuantTrading.Web/appsettings.json
+/QuantumBasedQuantTrading.Web/appsettings.Development.json
