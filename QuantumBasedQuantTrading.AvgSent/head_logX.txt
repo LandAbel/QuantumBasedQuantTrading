@@ -1,0 +1,6 @@
+Training data sample: title_sentiment  content_sentiment  description_sentiment     Open
+            0.75               0.50               0.000000 0.328783
+            0.50               0.75               0.000000 0.109180
+            0.25               0.00               0.666667 0.366005
+            0.00               0.50               0.666667 1.000000
+            0.25               0.25               1.000000 0.101736
